@@ -1,0 +1,29 @@
+{
+  "name": "adoptpet",
+  "version": "1.0.0",
+  "description": "Adopt a Pet App - KNPDK",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KNPDK/adoptpet.git"
+  },
+  "author": "KNPDK",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KNPDK/adoptpet/issues"
+  },
+  "homepage": "https://github.com/KNPDK/adoptpet#readme"
+}
