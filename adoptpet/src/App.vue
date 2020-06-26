@@ -8,7 +8,7 @@
 import HomeComponent from './components/HomeComponent.vue'
 
 export default {
-  name: 'HomeComponent',
+  name: 'app',
   components: {
     HomeComponent
   }

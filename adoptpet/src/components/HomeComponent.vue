@@ -11,14 +11,16 @@
             v-bind:index="index"
             v-bind:key="d._id"
             >
-            {{ d.text }}
+            <ul>
+            <li>{{ d.text }}</li>
+            </ul>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import ApiService from '../ApiService';
+import axios from 'axios';
 
 export default {
     name: 'HomeComponent',
@@ -31,7 +33,12 @@ export default {
     },
     async created() {
         try{
-            this.api = await ApiService.getData();
+        await axios
+        .get("http://localhost:3000/api")
+        .then(res => {
+          this.loading = false;
+          this.api = res.data;
+        })
         }catch(err){
             this.error = err;
         }
