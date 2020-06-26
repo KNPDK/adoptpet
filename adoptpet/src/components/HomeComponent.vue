@@ -1,4 +1,5 @@
 <template>
+
     <div class="container">
         <h1>{{ msg }}</h1>
         <h1>{{ msg2 }}</h1>
@@ -51,8 +52,4 @@ export default {
 </script>
 
 <style scoped>
-h1, h2{
-    text-align: center;
-    color: cornflowerblue;
-}
 </style>
