@@ -4,14 +4,17 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "start": "vue-cli-service serve --open"
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "mdbvue": "6.7.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {
     "@vue/cli-service": "~4.4.0",
+    "vue-cli-plugin-mdb": "~2.1.0",
     "vue-template-compiler": "^2.6.11"
   }
 }
