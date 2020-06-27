@@ -1,6 +1,6 @@
 <template>
   <mdb-navbar color="info" position="top" dark>
-    <mdb-navbar-brand href="https://mdbootstrap.com/">
+    <mdb-navbar-brand href="http://localhost:8080">
       Navbar
     </mdb-navbar-brand>
     <mdb-navbar-toggler>

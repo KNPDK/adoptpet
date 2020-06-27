@@ -1,5 +1,5 @@
 <template>
-  <mdb-card class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)">
+  <mdb-jumbotron class="mb-0 text-center mdb-color lighten-2 white-text">
     <div class="text-white text-center py-5 px-4 my-5">
       <div>
     <h1>{{ msg = "Welcome to Adopt a PET" }}</h1>
@@ -11,14 +11,16 @@
         <mdb-btn outline="white" size="md" icon="clone">View project</mdb-btn>
       </div>
     </div>
-  </mdb-card>
+  </mdb-jumbotron>
 </template>
 <script>
-  import { mdbCard, mdbBtn } from 'mdbvue';
+  import { mdbJumbotron, mdbRow, mdbCol, mdbBtn } from 'mdbvue';
   export default {
     name: 'JumbotronPage',
     components: {
-      mdbCard,
+      mdbJumbotron,
+      mdbRow,
+      mdbCol,
       mdbBtn
     }
   }
