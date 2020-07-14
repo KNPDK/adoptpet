@@ -1,46 +1,44 @@
 const express = require('express');
-const mongo = require('mongodb');
 const router = express.Router();
-
+const Pet = require('../model/pet');
 
 router.get('/', async (req, res) => {
-    const data = await getData();
-    res.send(await data.find({}).toArray());
+    const data =  await (new Pet).findAll();
+    res.status(200).send(data);
 });
-
 
 //POST todo
 router.post('/', async (req, res) => {
-    const data = await getData();
-    await data.insertOne({
-        text: req.body.text,
-        createdAt: new Date()
-    });
-    res.status(201).send();
+    const type = req.body.type;
+    const sex = req.body.sex;
+    const age = req.body.age;
+    const size = req.body.size;
+    const activity = req.body.activity;
+
+    const pet = new Pet(type, sex, age, size, activity);
+    if(pet.save())
+    {
+        res.status(201).send();
+    }
+    else{
+        res.status().send(400);
+    }
 })
 
 //DELETE todo
 // deleting by id
 router.delete('/', async (req, res) => {
-    const data = await getData();
-    await data.deleteOne({
-        _id: req.body.id
-    });
-    res.status(200).send();
+    const pet = new Pet;
+    const searchObject = {_id: req.body.id};
+    if(pet.deleteOne(searchObject))
+    {
+        res.status(200).send();
+    }
+    else
+    {
+        res.status(400).send();
+    }
+    
 })
-
-async function getData()
-{
-    // Create your own connection url as env variable
-    var dbUrl = process.env.PET_DB || 'mongodb://root:root@localhost/adoptpet?authMechanism=SCRAM-SHA-256&authSource=admin';
-
-    const mongoDBConnect = await mongo.MongoClient.connect(
-        dbUrl, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
-
-    return mongoDBConnect.db('adoptpet').collection('api');
-}
 
 module.exports = router;
